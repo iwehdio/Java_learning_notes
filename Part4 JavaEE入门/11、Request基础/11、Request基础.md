@@ -1,3 +1,5 @@
+# 38、Servlet、HTTP、Request
+
 ## 1、Servlet
 
 - Servlet 体系结构：
@@ -14,7 +16,7 @@
 
 > Hyper Text Transfer Protocol：超文本传输协议。
 
-- 传输协议：定义了客户端和服务器端通信，是发送数据的格式。
+- 传输协议：定义了客户端和服务器端通信是，发送数据的格式。
 
 - HTTP 协议：
 
@@ -51,7 +53,7 @@
        - `参数名=参数值`。
        - 峰值POST请求消息的请求参数。
 
-       - GET方式没有请求体，POST方式才有。
+       - GET方式没有请求头，POST方式才有。
 
 ## 3、Request
 
@@ -62,7 +64,7 @@
     1. Tomcat 服务器根据请求 url 中的资源路径，创建相应的对象。
     2. Tomcat 服务器创建 request 和 response 对象。
     3. Tomcat 将 request 和 response 对象传递给 service() 方法，并且调用 service() 方法。
-    4. 在 service() 方法中，通过 request 对象获取请求数据，通过 response 对象设置响应消息数据。
+    4. 在 service() 方法中，通过 request 对象获取请求凶啊洗漱间，通过 response 对象设置响应消息数据。
     5. 在服务器对浏览器响应之前，从 response 对象中取出响应消息数据。
 - request 继承体系结构：
   - ServletRequest：service() 方法中的 request 参数类型，是一个接口。
