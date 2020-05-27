@@ -233,8 +233,8 @@
 
     ```xml
     <mappers>
-            <mapper resource="cn.iwehdio.Dao.UserDao" />
-        </mappers>
+            <mapper class="cn.iwehdio.Dao.UserDao" />
+    </mappers>
     ```
 
 
@@ -246,7 +246,7 @@
 - Mybatis入门案例的执行流程：
   1. 根据主配置文件中的信息创建 Connection 对象，注册驱动、获取连接。
   2. 根据主配置文件中的 mapper 映射找到 Dao 配置文件。获取预处理对象 PrepareStatement 并传入 SQL 语句。
-  3. 执行 PrepareStatement 对象的 executeQuery() 方法进行查询，返回结果集对 ResultSet 。
+  3. 执行 PrepareStatement 对象的 executeQuery() 方法进行查询，返回结果集对象 ResultSet 。
   4. 封装结果集，将查询到的结果封装到实体类中存入 并返回 list（此处使用了反射）。
 - Mybatis入门案例的执行所需要的信息：
   1. 主配置文件中的连接信息。
@@ -508,22 +508,20 @@
    SqlSession session = factory.openSession();
    ```
 
-   
-
    - `sqlsession`是与数据库交互的核心类，其下有一个获取`Mapper`即获取SQL语句和封装目标实体类的方法和释放资源的方法。
 
      ```java
-     //与数据库交互的核心类
+  //与数据库交互的核心类
      public interface SqlSession {
          <T> T getMapper(Class<T> daoInterfaceClass);
          public void close();
      }
      ```
-
+   
    - `sqlsessionImpl`是`sqlsession`的实现类，构造方法中根据传入的配置获取连接。`getMapper`方法根据传入的`UserDao`接口创建代理对象，传入方法增强的实现类`MapperProxy`。
 
      ```java
-     public class SqlSessionImpl implements SqlSession {
+  public class SqlSessionImpl implements SqlSession {
      
          private Configuration cfg;
          private Connection connection;
@@ -550,7 +548,7 @@
          }
      }
      ```
-
+   
 5. 使用代理对象执行方法。
 
       ```java
