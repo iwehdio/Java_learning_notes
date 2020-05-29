@@ -374,4 +374,4 @@
     <package name="包名"></package>
     ```
 
-  - 也可以定义在`<mappers>`标签下，指定dao接口所在的包，当制定后就不需要写`<mapper>`标签了。
+  - 也可以定义在`<mappers>`标签下，指定dao接口所在的包，当指定后就不需要写`<mapper>`标签了。
