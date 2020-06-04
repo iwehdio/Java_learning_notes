@@ -303,4 +303,4 @@
   - 级联更新：主表列中的值改变时，同时也改变外键列中所对应的值。
   - 设置级联更新：`alter table 表名 add constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称) on update cascade` 。
   - 级联删除：主表列中的值所对应的行删除时，同时也删除外键列中值所对应的行。
-  - 设置级联删除`alter table 表名 add constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称) on delete cascade` 。
+  - 设置级联删除：`alter table 表名 add constraint 外键名称 foreign key (外键列名称) references 主表名称(主表列名称) on delete cascade` 。
