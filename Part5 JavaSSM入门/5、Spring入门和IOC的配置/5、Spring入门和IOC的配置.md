@@ -120,7 +120,7 @@
     }
     ```
 
-  - 服务层的表现层：
+  - 服务层和持久层：
 
     ```java
     //AccountServiceImpl.java
