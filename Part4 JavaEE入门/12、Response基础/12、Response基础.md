@@ -139,7 +139,7 @@
         protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
             response.setContentType("text/html;charset=utf-8");
             ServletOutputStream sos = response.getOutputStream();
-            sos.write("输出字符数据,utf-8".getBytes("utf-8"));
+            sos.write("输出字节数据,utf-8".getBytes("utf-8"));
         }
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             this.doPost(request, response);

@@ -96,7 +96,7 @@
        - `Map<String, String[]> getParameterMap()`：获取所有参数的 map 集合。
     2. 请求转发：一种在服务器内部的资源跳转方式。
        - 步骤：
-         1. 通过 request 对象获取请求转发器对象：`RequestDispatcher getRequsetDispatcher (Stirng paht)`。
+         1. 通过 request 对象获取请求转发器对象：`RequestDispatcher getRequsetDispatcher (Stirng path)`。
          2. 使用请求转发器对象进行转发：`void forward(ServletRequest request, ServletResponse response)`。
        - 特点：
          1. 浏览器地址栏路径不发生变化。
