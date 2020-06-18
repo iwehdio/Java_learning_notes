@@ -115,8 +115,8 @@ public class Demo {
   - 成员方法2——获取功能：
 
     1. `int length();`获取字符串长度。
-    2. `char charAt(int index);`获取制定索引处的字符。
-    3. `int indexOf（String str);`获取str在字符串中第一次出现的索引，返回 -1 时表示没找到。
+    2. `char charAt(int index);`获取指定索引处的字符。
+    3. `int indexOf(String str);`获取str在字符串中第一次出现的索引，返回 -1 时表示没找到。
     4. `String substring(int start);`从start开始截取字符串。
     5. `String substring(int start,int end);`从start开始到end介绍截取字符串，截取的包括start不包括end索引。
 

@@ -22,7 +22,7 @@
   - `Systemo.out.println();`获取的为集合对象的内容。
 - 构造方法：
   
-  - 创建对象为字符串的集合：`ArrayList<String> arrat = new ArrayList<String>();`
+  - 创建对象为字符串的集合：`ArrayList<String> array = new ArrayList<String>();`
 - 添加方法：
   - 添加元素：`public boolean add(E e);`
   - 指定索引处添加元素：`public void add(int index,E element);`

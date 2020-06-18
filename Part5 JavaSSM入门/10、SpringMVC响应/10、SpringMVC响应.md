@@ -65,8 +65,8 @@
   - 将JSON数据封装进Java Bean实体类：
 
     - 导入jackson依赖。
-    - 如果浏览器请求的JSON数据的键值对与实体类中的属性对应，则可以直接使用`@RequestBody User user)`获取user对象。
-    - 如果响应的JSON数据的键值对与实体类中的属性对应，则可以直接使用`@ResponseBody User指定返回值，SpringMVC会将该对象转为JSON数据发送给前端。
+    - 如果浏览器请求的JSON数据的键值对与实体类中的属性对应，则可以直接使用`(@RequestBody User user)`获取user对象。
+    - 如果响应的JSON数据的键值对与实体类中的属性对应，则可以直接使用`public @ResponseBody User`指定返回值，SpringMVC会将该对象转为JSON数据发送给前端。
 
 ## 2、文件上传
 
@@ -148,7 +148,7 @@
     }
     ```
 
-  - 出现异常时捕获并且发哦处自定义异常类：
+  - 出现异常时捕获并且抛出自定义异常类：
 
     ```java
     @RequestMapping("/testException")
