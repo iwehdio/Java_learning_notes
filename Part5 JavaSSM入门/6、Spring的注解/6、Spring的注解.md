@@ -57,11 +57,10 @@
       }
       ```
 
-      
   - `@Resource`：直接按照 bean 的 id 注入，可以用 name 属性指定 id 。
   - `@Value`：用于注入基本类型和String类型。value 属性指定数据的值，可以使用Spring的 EL 表达式（`$(表达式)`）。
   - 集合类型只能通过 XML 注入。
-
+  
 - 用于改变作用范围的注解：与`scope`属性作用相同。
 
   - `@Scope`：用于指定 bean 的作用范围取值。
@@ -190,7 +189,7 @@
         }
         return dataSource;
     }
-  ```
+    ```
   
 - 在使用时，需要更换为注解的方法：
   
@@ -243,7 +242,7 @@
     </dependency>
     ```
 
-  - 使用 Junit 提供的注解`@Runwith`将原有的mian方法替换了。
+  - 使用 Junit 提供的注解`@Runwith`将原有的main方法替换了。
 
   - 使用`@ContextConfigration`告知 Spring运行器，IOC容器式怎样创建的。
 

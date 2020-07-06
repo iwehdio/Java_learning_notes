@@ -1,5 +1,3 @@
-# 10、响应
-
 ## 1、响应
 
 - 返回值的分类：
@@ -13,7 +11,7 @@
 
     - 重定向需要加虚拟路径，并且不能访问WEB-INF下的资源。
 
-    - 也可以直接用`response.gwtWriter()`进行响应。
+    - 也可以直接用`response.getWriter()`进行响应。
 
   - 返回值为`ModelAndView`对象：
 

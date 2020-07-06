@@ -13,7 +13,7 @@
          <selectKey keyProperty="id" keyColumn="id" resultType="Integer" order="AFTER">
              select last_insert_id();
          </selectKey>
-         insert into user(username, address, sex, birthday)values(#{username}, #{address},#{sex},#{birthday});
+         insert into user(username, address, sex, birthday) values(#{username}, #{address},#{sex},#{birthday});
      </insert>
      ```
 
@@ -347,7 +347,7 @@
 
   - 在主配置文件中,定义在`<configuration>`标签下，作为全局参数。
   - 在下方使用`#{键的名称}`调用全局参数。
-  - 也可以用`rescource`属性指定外部配置文件，按照类路径的写法来写，必须存在类路径下。.
+  - 也可以用`rescource`属性指定外部配置文件，按照类路径的写法来写，必须存在类路径下。
   - 也可以用`url`属性指定路径，使用`file:///+文件路径`。
 
 - `<typeAliases>`标签：

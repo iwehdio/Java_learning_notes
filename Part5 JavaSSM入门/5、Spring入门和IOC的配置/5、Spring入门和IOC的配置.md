@@ -140,7 +140,7 @@
     }
     ```
 
-  - 这样每次反射都要重新创建对象，是多例的，但是单例的效果更高。可以使用一个容器，保存所有反射创建的对象。
+  - 这样每次反射都要重新创建对象，是多例的，但是单例的效率更高。可以使用一个容器，保存所有反射创建的对象。
 
     ```java
     public class BeanFactory {
@@ -220,7 +220,7 @@
 - `ApplicationContext`的三个实现类：
   
   - `ClassPathXmlApplicationContext`：可以加载类路径（resources）下的配置文件，要求文件必须在类路径下。
-  - `FileSystemXmlApplicationContest`：可以加载磁盘任意路径下的配置文件。
+  - `FileSystemXmlApplicationContext`：可以加载磁盘任意路径下的配置文件。
   - `AnnotationConfigApplicationContext`：用于读取注解创建容器。
   
 - 核心容器的两个接口：

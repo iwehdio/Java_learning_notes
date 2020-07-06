@@ -169,7 +169,7 @@
     - 实现的SQL语句：
 
       ```mysql
-      select u.*, a.id as aid, a.uid, a.money from account a, user u whrer u.id = a.id; 
+      select u.*, a.id as aid, a.uid, a.money from account a, user u where u.id = a.id; 
       ```
 
   - 通过写`Account`的子类`AccountUser`的方式查询.。在`toString()`方法中也调用父类的方法：
