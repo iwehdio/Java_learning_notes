@@ -17,7 +17,7 @@
 
 - 捕获处理：
 
-  - 根据已知可能出现的异常类型， 出入异常对象。
+  - 根据已知可能出现的异常类型， 传入异常对象。
 
   - try ... catch 语句
 
@@ -95,7 +95,7 @@
   - IO流异常处理，例：
 
     ```java
-    FileWriter fw = null;			// 在外部声明并初始化，防止
+    FileWriter fw = null;			// 在外部声明并初始化，防止空指针
     try {
         System.out.println(2 / 0);		//异常1
         fw = new FileWriter("A.txt");

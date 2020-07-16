@@ -99,7 +99,7 @@
     int index = Collections.binarySearch(list, 4);
     ```
 
-  - `static void copy(List dext, Lit src)`：把源列表中的数组覆盖到目标列表（目标列表长度要大于等于源列表）。
+  - `static void copy(List dext, List src)`：把源列表中的数组覆盖到目标列表（目标列表长度要大于等于源列表）。
 
   - `static void fill(List list, Object obj)`：使用指定对象填充指定列表的所有元素。
 
