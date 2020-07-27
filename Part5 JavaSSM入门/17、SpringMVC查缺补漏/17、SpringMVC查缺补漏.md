@@ -19,7 +19,7 @@
     - `{username!="123"}`：表示不带参数或者参数值不能为123。还可以指定带参数的值必须为什么。
     - 还可以用逗号，分隔多规则。
   - consumes属性：只接受内容类型为那种的请求，规定请求头中的Content-Type。
-  - produces属性：高速浏览器返回的类型是什么，给响应头加上Content-Type。
+  - produces属性：告诉浏览器返回的类型是什么，给响应头加上Content-Type。
   
 - Ant风格的url（模糊匹配）：
   - `?`：替代任意一个字符。
@@ -57,7 +57,7 @@
     - 实际上这三个是同一个BindingAwareModelMap，称之为隐含模型。
   - 方法返回值为ModelAndView类型。
     - 带参构造方法可传入要跳转到的视图对象，也可以使用`setViewName()`方法。
-    - 使用方法`addObject()`方法条件数据，数据也放在请求域中。
+    - 使用方法`addObject()`方法添加数据，数据也放在请求域中。
   - 保存数据到session域中：
     - 使用注解`@SessionAttributes`，只能标在类上。
     - value属性指定BindingAwareModelMap或ModelAndView中保存的数据的键，同时也存入session域中。
@@ -77,11 +77,11 @@
   - getHandler方法根据请求地址，决定那个控制器类处理当前请求，获取目标处理器类。如果没找到对应的控制器，就报错。
   - getHandlerAdapter方法拿到能执行控制器类中所有方法的适配器ha。就是拿到了一个反射工具。
   - ha.handle适配器执行目标方法，将返回值保存到ModelAndView中。
-  - processDispatcherResule方法执行，转发到目标页面。
+  - processDispatcherResult方法执行，转发到目标页面。
 - getHandler方法怎么找到控制器类的：
   - 返回一个目标处理器类的执行链。
   - handlerMapping处理器映射，保存了那个请求由那个控制器来处理。
-  - 其中的handlerMap，在IOC容器启动时自动创建Controller对象时扫描每个处理器能出来什么请求并保存。
+  - 其中的handlerMap，在IOC容器启动时自动创建Controller对象时扫描每个处理器能处理什么请求并保存。
 - DispatcherServlet中的九个引用类型的属性，被称为SpringMVC的九大组件：
   - SpringMVC工作时的关键位置都是由九大组件完成的。全部都是接口。
   - multipartResolver：文件上传解析器。
@@ -96,7 +96,6 @@
   - onRefresh方法中初始化九大组件。初始化会先从容器中找对应的bean，找不到就使用默认配置。
 - 用反射执行控制器方法时，如何确定目标方法每一个参数的值：
   - ha.handler执行目标方法。
-    - 其中的invokeHandlerMethod方法执行目标方法。
     - 其中的methodInvoke.invoekHandlerMethod方法执行目标方法。
     - 先运行modelAttribute方法，再运行目标方法。
     - resolveHandlerArguments方法确定目标方法执行时方法的参数值。 分别解析注解、原生API、BindingAwareModelMap、自定义参数。
@@ -111,7 +110,7 @@
 - 请求处理方法执行完成后，最终都会返回一个ModelAndView对象。
 - 视图解析流程：
   - 任何方法的返回值，最后都会被包装成ModelAndView对象。
-  - processDispatcherResule方法执行，转发到目标页面。视图渲染，将域中的数据放到页面展示。
+  - processDispatcherResult方法执行，转发到目标页面。视图渲染，将域中的数据放到页面展示。
   - render方法渲染页面。其中renderMergedOutputModel对象对页面输出数据渲染。
   - resolverViewName方法执行，根据视图名获得view对象。
   - creatView方法执行，创建view对象。查看是否是转发/重定向前缀，否则加上配置的前缀和后缀。
@@ -123,7 +122,7 @@
     - 让Spring管理国际化资源，配置资源文件管理器ResourceBundleMessageSource，指定国际化文件的基础名。。
     - 直接去页面使用`<fmt:message>`。
 - `<mvc:view-controller>`标签：
-  - j将请求映射一个页面，直接来到WEB/INF下的页面。
+  - 将请求映射一个页面，直接来到WEB/INF下的页面。
   - path属性：指定那个请求。
   - view-name属性：指定映射给那个视图。
   - 为了不影响其他请求，还需要开启`<mvc:annotation-driven>`。
