@@ -5,7 +5,7 @@
 - 优点：
 
   - 快速创建独立运行的Spring项目及主流框架集成。
-  - 使用嵌入式的Servlet容器，应用无序打成WAR包。
+  - 使用嵌入式的Servlet容器，应用无需打成WAR包。
   - starters自动依赖与版本控制。
   - 大量的自动配置，简化开发，也可以修改默认值。
   - 无需配置xml，无代码生成。
@@ -91,11 +91,11 @@
   - pom.xml下：
 
     - 父项目：
-      - spring-boot-starter-parent的父项目是spring-boot-dependencies，它真正乱来的SpringBoot应用中的所有依赖版本，是SPringBoot的版本仲裁中心。
+      - spring-boot-starter-parent的父项目是spring-boot-dependencies，它真正管理着SpringBoot应用中的所有依赖版本，是SpringBoot的版本仲裁中心。
       - 在这个版本仲裁中心中管理的依赖，之后再导入不需要写版本。
     - 导入的依赖：
       - spring-boot-starter-web：spring-boot-starter是SpringBoot场景启动器。帮我们导入了web模型正常运行所需要的模块。
-      - SpringBoot将所有的功能场景抽取出来，做成starts（启动器），引入starts，相关场景的依赖就会全部导入进来。
+      - SpringBoot将所有的功能场景抽取出来，做成starter（启动器），引入starter，相关场景的依赖就会全部导入进来。
 
   - 主程序类（主入口类）：
 

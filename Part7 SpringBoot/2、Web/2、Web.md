@@ -64,7 +64,7 @@
     - 自动注册了Converter、Formatter，即类型转换器、格式化器。
     - 支持HttpMessageConverters即Http信息转换器，用来转换Http请求和响应。
     - 在SpringBoot中会有非常多的xxxConfigurer帮助我们进行扩展配置，会有很多的xxxCustomizer帮助我们进行定制配置。
-  - 如果需要修改默认配置，只需要将一个实现了对于接口的组件加入容器中。
+  - 如果需要修改默认配置，只需要将一个实现了对应接口的组件加入容器中。
   - SpringBoot自动配置的模式：
     
     - 配置组件前，先看容器中有没有用户配置的，没有才会执行自动配置。多个组件会将用户配置和默认的组合使用。
@@ -324,17 +324,21 @@
 
     - 前端用`${emp!=null}`判断是添加页面还是修改页面。用__method指定请求方式。
 
+      ```html
+      <input type="hidden" name="_method" value="put">
+      ```
+      
       ```java
       @PutMapping("/emp")
       public String edit(Employee employee) {
           employeeDao.save(employee);
-          System.out.println(employee);
+        System.out.println(employee);
           return "redirect:emps";
-      }
+    }
       ```
-
+  
   - 员工删除：
-
+  
     ```java
     @DeleteMapping("/emp/{id}")
     public String delete(@PathVariable("id") Integer id) {
@@ -351,7 +355,7 @@
 
   - 错误处理原理：
 
-    - 往容器中添加了几个组件：
+    - 往容器中添加了几个组件。
     - 系统出现4xx或者5xx的错误：ErrorPageCustomizer就会生效。来到/error请求。
     - 处理默认/error请求：BasicErrorController处理错误请求。
     - 去往那个视图：DefaultErrorViewResolver解析视图。
@@ -365,7 +369,7 @@
 
   - 定制错误JSON数据：
 
-    - 创建异常处理器，添加`@ControllerAdvice`注解。
+    - 创建异常处理器，添加`@ControllerAdvice`注解，增强的控制器，可进行全局异常处理。
 
     - 处理异常的方法，上加注解`@ExceptionHandler(错误类型.class)`。
 

@@ -136,7 +136,7 @@
   - 自增：`GenerationType.INDENTITY`，前提是底层数据库支持自动增长方式，对id自增（MySQL）。
   - 序列：`GenerationType.SEQUENCE`，前提是底层数据库支持序列（Oracle）。
   - JPA提供的机制，通过一张数据库表的形式完成主键自增：`GenerationType.TABLE`。
-  - 程序自动选择主键生成测量：`GenerationType.AUTO`。
+  - 程序自动选择主键生成策略：`GenerationType.AUTO`。
 
 - 抽取JpaUtils：
 

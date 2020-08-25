@@ -2,7 +2,7 @@
 
 > 一个开源的应用容器引擎。
 
-- 支持将软件编译成一个镜像，然后再镜像中各种软件做好配置，将镜像发布出去。其他使用者可以直接使用这个镜像。
+- 支持将软件编译成一个镜像，然后在镜像中各种软件做好配置，将镜像发布出去。其他使用者可以直接使用这个镜像。
 - 运行中的这个镜像被称为容器。
 - Docker核心概念：
   - docker主机：安装了Docker程序的机器。
@@ -411,7 +411,7 @@
     @AutoConfigureAfter  //指定自动配置类的顺序
     @Bean  //给容器中添加组件
     
-    @ConfigurationPropertie结合相关xxxProperties类来绑定相关的配置
+    @ConfigurationPropertie			//结合相关xxxProperties类来绑定相关的配置
     @EnableConfigurationProperties //让xxxProperties生效加入到容器中
     
     自动配置类要能加载
