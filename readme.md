@@ -1,3 +1,5 @@
+移动至[iwehdio的wolai首页](https://www.wolai.com/iwehdio/m7WJfoDzCEgNZkhkS7BJDd?theme=light)
+
 ## 1、目录
 
 - [计算机基础](#2%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80)：
